@@ -83,7 +83,7 @@ const Ethos = () => {
               onClick={() => navigate("/resume")}
               variant="outline"
               size="lg"
-              className="group gap-2 border-2 hover:bg-foreground hover:text-background transition-all duration-300"
+              className="group gap-2 bg-gradient-to-r from-primary to-secondary text-white border-0 hover:shadow-lg hover:shadow-primary/50 hover:scale-105 transition-all duration-300 font-semibold rounded-full px-8"
             >
               <FileText className="w-5 h-5 group-hover:rotate-6 transition-transform" />
               View Technical Résumé
