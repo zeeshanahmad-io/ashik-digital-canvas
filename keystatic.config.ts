@@ -1,9 +1,14 @@
 import { config, fields, collection } from '@keystatic/core';
 
 export default config({
-    storage: {
-        kind: 'local',
-    },
+    storage: import.meta.env.PROD
+        ? {
+            kind: 'github',
+            repo: (import.meta.env.VITE_GITHUB_REPO as `${string}/${string}`) || 'zeeahmad/ashik-digital-canvas',
+        }
+        : {
+            kind: 'local',
+        },
     collections: {
         journal: collection({
             label: 'Journal',
