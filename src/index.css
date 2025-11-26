@@ -8,93 +8,93 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Editorial Paper Palette */
-    --background: 36 33% 98%;  /* Cream paper #FDFBF7 */
-    --foreground: 0 0% 10%;     /* Charcoal #1A1A1A */
+    /* High-Fashion Monochrome Palette */
+    --background: 0 0% 100%;    /* Stark White #FFFFFF */
+    --foreground: 0 0% 0%;      /* Deep Onyx #000000 */
 
-    --card: 36 33% 98%;
-    --card-foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 36 33% 98%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 0 0% 10%;        /* Charcoal for emphasis */
-    --primary-foreground: 36 33% 98%;
+    --primary: 0 0% 0%;         /* Black for emphasis */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 20% 92%;    /* Soft beige */
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 0 0% 96%;      /* Very light grey */
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 30 15% 88%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 20 60% 88%;       /* Soft peach accent */
-    --accent-foreground: 0 0% 10%;
+    --accent: 0 0% 90%;         /* Light grey accent */
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 36 33% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 85%;
-    --input: 30 20% 90%;
-    --ring: 0 0% 10%;
+    --border: 0 0% 0%;          /* Sharp black borders */
+    --input: 0 0% 95%;
+    --ring: 0 0% 0%;
 
-    --radius: 0.75rem;
+    --radius: 0.125rem;         /* Sharp corners */
 
-    /* Custom editorial colors */
-    --mesh-gradient-1: 20 60% 95%;  /* Soft peach */
-    --mesh-gradient-2: 0 0% 92%;    /* Light grey */
-    --mesh-gradient-3: 36 40% 96%;  /* Warm cream */
+    /* Monochrome gradient accents */
+    --mesh-gradient-1: 0 0% 98%;
+    --mesh-gradient-2: 0 0% 95%;
+    --mesh-gradient-3: 0 0% 100%;
 
-    --sidebar-background: 36 33% 98%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 36 33% 98%;
-    --sidebar-accent: 30 20% 92%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 30 20% 85%;
-    --sidebar-ring: 0 0% 10%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 0%;
+    --sidebar-ring: 0 0% 0%;
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 36 33% 98%;
+    --background: 0 0% 0%;      /* Pure black */
+    --foreground: 0 0% 100%;    /* Pure white */
 
-    --card: 0 0% 12%;
-    --card-foreground: 36 33% 98%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 36 33% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 36 33% 98%;
-    --primary-foreground: 0 0% 10%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 36 33% 98%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
     --accent: 0 0% 20%;
-    --accent-foreground: 36 33% 98%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 36 33% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 36 33% 98%;
+    --border: 0 0% 100%;        /* White borders in dark mode */
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
 
-    --mesh-gradient-1: 20 40% 20%;
-    --mesh-gradient-2: 0 0% 15%;
-    --mesh-gradient-3: 0 0% 18%;
+    --mesh-gradient-1: 0 0% 5%;
+    --mesh-gradient-2: 0 0% 10%;
+    --mesh-gradient-3: 0 0% 0%;
 
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 36 33% 98%;
-    --sidebar-primary: 36 33% 98%;
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 0 0% 18%;
-    --sidebar-accent-foreground: 36 33% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 36 33% 98%;
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 0 0% 100%;
   }
 }
 
