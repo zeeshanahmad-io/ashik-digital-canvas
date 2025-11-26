@@ -17,7 +17,7 @@ export const BentoAbout = () => {
   };
 
   return (
-    <section className="min-h-screen py-24 px-6">
+    <section className="py-24 px-6">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           variants={container}
