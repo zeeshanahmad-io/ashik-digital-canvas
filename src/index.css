@@ -8,9 +8,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* High-Fashion Monochrome Palette */
-    --background: 0 0% 100%;    /* Stark White #FFFFFF */
-    --foreground: 0 0% 0%;      /* Deep Onyx #000000 */
+    /* Vibrant Aura Palette */
+    --background: 0 0% 100%;    /* Pure White #FFFFFF */
+    --foreground: 0 0% 0%;      /* Black text */
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
@@ -18,83 +18,83 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 0 0% 0%;         /* Black for emphasis */
+    --primary: 16 100% 65%;     /* Warm Coral #FF7F50 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;      /* Very light grey */
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 271 76% 53%;   /* Electric Violet #8A2BE2 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 0 0% 90%;         /* Light grey accent */
+    --accent: 51 100% 50%;      /* Sunny Gold #FFD700 */
     --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 0%;          /* Sharp black borders */
-    --input: 0 0% 95%;
-    --ring: 0 0% 0%;
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 16 100% 65%;
 
-    --radius: 0.125rem;         /* Sharp corners */
+    --radius: 0.75rem;
 
-    /* Monochrome gradient accents */
-    --mesh-gradient-1: 0 0% 98%;
-    --mesh-gradient-2: 0 0% 95%;
-    --mesh-gradient-3: 0 0% 100%;
+    /* Vibrant gradient orbs */
+    --mesh-gradient-1: 16 100% 65%;   /* Coral */
+    --mesh-gradient-2: 271 76% 53%;   /* Violet */
+    --mesh-gradient-3: 51 100% 50%;   /* Gold */
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 0 0% 0%;
-    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary: 16 100% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 96%;
     --sidebar-accent-foreground: 0 0% 0%;
-    --sidebar-border: 0 0% 0%;
-    --sidebar-ring: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 16 100% 65%;
   }
 
   .dark {
-    --background: 0 0% 0%;      /* Pure black */
-    --foreground: 0 0% 100%;    /* Pure white */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 5%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 5%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 16 100% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
+    --secondary: 271 76% 53%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 51 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 100%;        /* White borders in dark mode */
-    --input: 0 0% 15%;
-    --ring: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 16 100% 65%;
 
-    --mesh-gradient-1: 0 0% 5%;
-    --mesh-gradient-2: 0 0% 10%;
-    --mesh-gradient-3: 0 0% 0%;
+    --mesh-gradient-1: 16 100% 45%;
+    --mesh-gradient-2: 271 76% 33%;
+    --mesh-gradient-3: 51 100% 30%;
 
-    --sidebar-background: 0 0% 0%;
+    --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 10%;
+    --sidebar-primary: 16 100% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 18%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 100%;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 16 100% 65%;
   }
 }
 
@@ -115,10 +115,23 @@ All colors MUST be HSL.
 @layer utilities {
   .mesh-gradient {
     background: 
-      radial-gradient(at 20% 30%, hsl(var(--mesh-gradient-1)) 0px, transparent 50%),
-      radial-gradient(at 80% 70%, hsl(var(--mesh-gradient-2)) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, hsl(var(--mesh-gradient-3)) 0px, transparent 50%);
+      radial-gradient(at 20% 30%, hsl(var(--mesh-gradient-1) / 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 70%, hsl(var(--mesh-gradient-2) / 0.25) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, hsl(var(--mesh-gradient-3) / 0.2) 0px, transparent 50%);
     background-color: hsl(var(--background));
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glassmorphism {
+    background: hsl(var(--background) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .text-balance {
