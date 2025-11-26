@@ -3,7 +3,7 @@ import { BentoAbout } from "@/components/BentoAbout";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-32">
       <Hero />
       <BentoAbout />
     </div>
