@@ -11,6 +11,7 @@ import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
+import { Layout } from "@/components/Layout";
 
 const queryClient = new QueryClient();
 
@@ -21,15 +22,16 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/ethos" element={<Ethos />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/journal" element={<Journal />} />
-          <Route path="/journal/:slug" element={<BlogPost />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/ethos" element={<Ethos />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/journal" element={<Journal />} />
+            <Route path="/journal/:slug" element={<BlogPost />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
           <Route path="/keystatic/*" element={<Admin />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

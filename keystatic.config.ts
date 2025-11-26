@@ -1,8 +1,11 @@
 import { config, fields, collection } from '@keystatic/core';
 
 // Helper to get env vars safely in both Node (Vite config) and Browser
-const isProd = import.meta.env?.PROD ?? process.env.NODE_ENV === 'production';
-const repo = (import.meta.env?.VITE_GITHUB_REPO ?? process.env.VITE_GITHUB_REPO) as `${string}/${string}` || 'zeeahmad/ashik-s-digital-canvas';
+const isProd = (typeof import.meta !== 'undefined' && import.meta.env?.PROD) ||
+    (typeof process !== 'undefined' && process.env?.NODE_ENV === 'production');
+
+const repo = ((typeof import.meta !== 'undefined' && import.meta.env?.VITE_GITHUB_REPO) ||
+    (typeof process !== 'undefined' && process.env?.VITE_GITHUB_REPO)) as `${string}/${string}` || 'zeeahmad/ashik-s-digital-canvas';
 
 export default config({
     storage: isProd

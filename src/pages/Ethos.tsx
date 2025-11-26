@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { FloatingDock } from "@/components/FloatingDock";
 import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
 
@@ -9,8 +8,6 @@ const Ethos = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <FloatingDock />
-
       <main className="container mx-auto max-w-4xl px-6 py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -44,30 +41,30 @@ const Ethos = () => {
             className="space-y-8 text-lg leading-relaxed text-muted-foreground"
           >
             <p>
-              At Oracle, I've spent my days architecting the invisible—visual control planes that 
-              transform distributed systems from incomprehensible complexity into intuitive 
-              interfaces. As a Principal Member of Technical Staff, I design React and TypeScript 
-              plugins for Oracle Sharded Database, building private endpoint workflows that bridge 
-              the gap between raw infrastructure and human understanding. My work with OCI Vault 
-              encryption integration is about trust: ensuring that what's secure feels secure, 
+              At Oracle, I've spent my days architecting the invisible—visual control planes that
+              transform distributed systems from incomprehensible complexity into intuitive
+              interfaces. As a Principal Member of Technical Staff, I design React and TypeScript
+              plugins for Oracle Sharded Database, building private endpoint workflows that bridge
+              the gap between raw infrastructure and human understanding. My work with OCI Vault
+              encryption integration is about trust: ensuring that what's secure feels secure,
               that what's complex becomes clear.
             </p>
 
             <p>
-              Before Oracle, I spent eight years at SAP Labs India, where I learned that software 
-              engineering is as much about narrative as it is about code. I built the NextGen Cloud 
-              Payroll microservices from the ground up, architected REST API adapters for Employee 
-              Central, and crafted UI components for SAP Lumira Discovery. Each project was a story 
-              of structure emerging from chaos—of taking scattered requirements and weaving them 
+              Before Oracle, I spent eight years at SAP Labs India, where I learned that software
+              engineering is as much about narrative as it is about code. I built the NextGen Cloud
+              Payroll microservices from the ground up, architected REST API adapters for Employee
+              Central, and crafted UI components for SAP Lumira Discovery. Each project was a story
+              of structure emerging from chaos—of taking scattered requirements and weaving them
               into coherent, maintainable systems.
             </p>
 
             <p>
-              My approach to engineering is rooted in a belief that great architecture is about 
-              more than technical excellence. It's about empathy: understanding how users think, 
-              how systems fail, and how complexity can be tamed without being oversimplified. 
-              Whether I'm working with Docker containers, SpringBoot microservices, or React 
-              frontends, I'm always asking: How can this be clearer? How can this be more elegant? 
+              My approach to engineering is rooted in a belief that great architecture is about
+              more than technical excellence. It's about empathy: understanding how users think,
+              how systems fail, and how complexity can be tamed without being oversimplified.
+              Whether I'm working with Docker containers, SpringBoot microservices, or React
+              frontends, I'm always asking: How can this be clearer? How can this be more elegant?
               How can this tell its own story?
             </p>
           </motion.article>

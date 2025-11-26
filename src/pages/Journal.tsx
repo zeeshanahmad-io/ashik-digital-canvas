@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { FloatingDock } from "@/components/FloatingDock";
 import { useQuery } from "@tanstack/react-query";
 import { getJournalEntries } from "@/lib/journal";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -30,8 +29,6 @@ const Journal = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <FloatingDock />
-
       <main className="container mx-auto px-6 py-24">
         <motion.header
           initial={{ opacity: 0, y: 30 }}

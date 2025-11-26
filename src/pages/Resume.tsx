@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { FloatingDock } from "@/components/FloatingDock";
 import { Button } from "@/components/ui/button";
 import { Printer } from "lucide-react";
 
@@ -10,8 +9,6 @@ const Resume = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <FloatingDock />
-
       <div className="container mx-auto max-w-4xl px-6 py-24">
         {/* Print Button */}
         <motion.div

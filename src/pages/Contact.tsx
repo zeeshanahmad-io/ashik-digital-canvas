@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
-import { FloatingDock } from "@/components/FloatingDock";
 import { Mail, Linkedin, Github } from "lucide-react";
 
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
-      <FloatingDock />
-
       <main className="container mx-auto max-w-2xl px-6 py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

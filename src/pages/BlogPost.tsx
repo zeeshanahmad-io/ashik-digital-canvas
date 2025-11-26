@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
-import { FloatingDock } from "@/components/FloatingDock";
 import { useQuery } from "@tanstack/react-query";
 import { getJournalEntry } from "@/lib/journal";
 import { format } from "date-fns";
@@ -46,8 +45,6 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <FloatingDock />
-
       <article className="container mx-auto max-w-4xl px-6 py-24">
         {/* Back Button */}
         <motion.div
