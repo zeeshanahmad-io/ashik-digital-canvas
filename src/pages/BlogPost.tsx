@@ -2,10 +2,14 @@ import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
 import { FloatingDock } from "@/components/FloatingDock";
 import { useQuery } from "@tanstack/react-query";
-import { getPostBySlug } from "@/lib/api";
+import { getJournalEntry } from "@/lib/journal";
 import { format } from "date-fns";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,7 +17,7 @@ const BlogPost = () => {
 
   const { data: post, isLoading } = useQuery({
     queryKey: ["post", slug],
-    queryFn: () => getPostBySlug(slug!),
+    queryFn: () => getJournalEntry(slug!),
     enabled: !!slug,
   });
 
@@ -64,14 +68,16 @@ const BlogPost = () => {
 
         {/* Hero Image with morph animation */}
         <motion.div
-          layoutId={`post-${post.id}`}
+          layoutId={`post-${post.slug}`}
           className="aspect-[21/9] rounded-2xl overflow-hidden mb-12"
         >
-          <img
-            src={post.attributes.coverImage.data.attributes.url}
-            alt={post.attributes.coverImage.data.attributes.alternativeText}
-            className="w-full h-full object-cover"
-          />
+          {post.coverImage && (
+            <img
+              src={post.coverImage}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          )}
         </motion.div>
 
         {/* Content */}
@@ -83,22 +89,50 @@ const BlogPost = () => {
         >
           <header className="space-y-4">
             <time className="text-sm text-muted-foreground">
-              {format(new Date(post.attributes.publishedAt), "MMMM d, yyyy")}
+              {format(new Date(post.date), "MMMM d, yyyy")}
             </time>
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-balance">
-              {post.attributes.title}
+              {post.title}
             </h1>
             <p className="text-xl text-muted-foreground text-balance">
-              {post.attributes.summary}
+              {post.description}
             </p>
           </header>
 
           <div className="h-px bg-border" />
 
-          <div className="prose prose-lg max-w-none">
-            <p className="text-muted-foreground leading-relaxed">
-              {post.attributes.content}
-            </p>
+          <div className="prose prose-lg max-w-none dark:prose-invert">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                code({ node, inline, className, children, ...props }: any) {
+                  const match = /language-(\w+)/.exec(className || '')
+                  return !inline && match ? (
+                    <SyntaxHighlighter
+                      {...props}
+                      style={vscDarkPlus}
+                      language={match[1]}
+                      PreTag="div"
+                    >
+                      {String(children).replace(/\n$/, '')}
+                    </SyntaxHighlighter>
+                  ) : (
+                    <code {...props} className={className}>
+                      {children}
+                    </code>
+                  )
+                },
+                blockquote({ children }: any) {
+                  return (
+                    <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-muted-foreground">
+                      {children}
+                    </blockquote>
+                  );
+                }
+              }}
+            >
+              {post.content}
+            </ReactMarkdown>
           </div>
         </motion.div>
       </article>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FloatingDock } from "@/components/FloatingDock";
 import { useQuery } from "@tanstack/react-query";
-import { getPosts } from "@/lib/api";
+import { getJournalEntries } from "@/lib/journal";
 import { Skeleton } from "@/components/ui/skeleton";
 import { format } from "date-fns";
 
@@ -10,7 +10,7 @@ const Journal = () => {
   const navigate = useNavigate();
   const { data: posts, isLoading } = useQuery({
     queryKey: ["posts"],
-    queryFn: getPosts,
+    queryFn: getJournalEntries,
   });
 
   const container = {
@@ -60,10 +60,10 @@ const Journal = () => {
           >
             {posts?.map((post) => (
               <motion.article
-                key={post.id}
+                key={post.slug}
                 variants={item}
-                layoutId={`post-${post.id}`}
-                onClick={() => navigate(`/journal/${post.attributes.slug}`)}
+                layoutId={`post-${post.slug}`}
+                onClick={() => navigate(`/journal/${post.slug}`)}
                 className="group cursor-pointer"
               >
                 <div className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -72,21 +72,23 @@ const Journal = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <img
-                      src={post.attributes.coverImage.data.attributes.url}
-                      alt={post.attributes.coverImage.data.attributes.alternativeText}
-                      className="w-full h-full object-cover"
-                    />
+                    {post.coverImage && (
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </motion.div>
                   <div className="p-6 space-y-3">
                     <time className="text-sm text-muted-foreground">
-                      {format(new Date(post.attributes.publishedAt), "MMMM d, yyyy")}
+                      {format(new Date(post.date), "MMMM d, yyyy")}
                     </time>
                     <h2 className="text-2xl font-serif font-bold group-hover:text-primary transition-colors">
-                      {post.attributes.title}
+                      {post.title}
                     </h2>
                     <p className="text-muted-foreground line-clamp-3">
-                      {post.attributes.summary}
+                      {post.description}
                     </p>
                   </div>
                 </div>

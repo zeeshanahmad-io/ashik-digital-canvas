@@ -10,6 +10,7 @@ import Journal from "./pages/Journal";
 import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/resume" element={<Resume />} />
           <Route path="/journal" element={<Journal />} />
           <Route path="/journal/:slug" element={<BlogPost />} />
+          <Route path="/keystatic/*" element={<Admin />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

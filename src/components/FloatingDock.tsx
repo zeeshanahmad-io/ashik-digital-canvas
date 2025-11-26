@@ -13,10 +13,10 @@ const dockItems = [
 export const FloatingDock = () => {
   return (
     <motion.nav
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: 100, opacity: 0, x: "-50%" }}
+      animate={{ y: 0, opacity: 1, x: "-50%" }}
       transition={{ delay: 0.5, duration: 0.6 }}
-      className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
+      className="fixed bottom-8 left-1/2 z-50 w-max"
     >
       <div className="bg-card/80 backdrop-blur-lg border border-border rounded-full px-6 py-3 shadow-lg">
         <ul className="flex items-center gap-6">

@@ -29,12 +29,12 @@ export const BentoAbout = () => {
           {/* Bio Block - Spans 2 columns on large screens */}
           <motion.div
             variants={item}
-            className="lg:col-span-2 glassmorphism border border-border/30 rounded-2xl p-8 flex flex-col justify-center shadow-lg hover:shadow-xl transition-shadow"
+            className="lg:col-span-2 glassmorphism border border-border rounded-2xl p-8 flex flex-col justify-center shadow-lg hover:shadow-xl transition-shadow"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">About</h2>
             <p className="text-lg text-foreground/80 leading-relaxed text-balance">
-              I live in the balance between logic and narrative. By day, I architect visual control 
-              planes for distributed systems, turning chaos into structure. By night, I explore the 
+              I live in the balance between logic and narrative. By day, I architect visual control
+              planes for distributed systems, turning chaos into structure. By night, I explore the
               quieter corners of life through writing.
             </p>
           </motion.div>
@@ -42,7 +42,7 @@ export const BentoAbout = () => {
           {/* Portrait Block with parallax effect */}
           <motion.div
             variants={item}
-            className="glassmorphism border border-border/30 rounded-2xl overflow-hidden relative group shadow-lg hover:shadow-xl transition-shadow"
+            className="glassmorphism border border-border rounded-2xl overflow-hidden relative group shadow-lg hover:shadow-xl transition-shadow"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -60,9 +60,9 @@ export const BentoAbout = () => {
           {/* Current Role */}
           <motion.div
             variants={item}
-            className="glassmorphism border border-border/30 rounded-2xl p-8 flex flex-col justify-center shadow-lg hover:shadow-xl transition-shadow"
+            className="glassmorphism border border-border rounded-2xl p-8 flex flex-col justify-center shadow-lg hover:shadow-xl transition-shadow"
           >
-            <p className="text-sm text-foreground/60 uppercase tracking-wider mb-3">
+            <p className="text-sm text-muted-foreground uppercase tracking-wider mb-3">
               Current Role
             </p>
             <h3 className="text-xl font-serif font-bold mb-2">
@@ -74,9 +74,9 @@ export const BentoAbout = () => {
           {/* Focus Areas */}
           <motion.div
             variants={item}
-            className="lg:col-span-2 glassmorphism border border-border/30 rounded-2xl p-8 flex flex-col justify-center shadow-lg hover:shadow-xl transition-shadow"
+            className="lg:col-span-2 glassmorphism border border-border rounded-2xl p-8 flex flex-col justify-center shadow-lg hover:shadow-xl transition-shadow"
           >
-            <p className="text-sm text-foreground/60 uppercase tracking-wider mb-4">
+            <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">
               Focus Areas
             </p>
             <div className="flex flex-wrap gap-3">
@@ -84,7 +84,7 @@ export const BentoAbout = () => {
                 (skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 glassmorphism border border-border/30 rounded-full text-sm font-medium hover:scale-105 transition-transform"
+                    className="px-4 py-2 glassmorphism border border-border rounded-full text-sm font-medium hover:scale-105 transition-transform text-foreground/90"
                   >
                     {skill}
                   </span>
