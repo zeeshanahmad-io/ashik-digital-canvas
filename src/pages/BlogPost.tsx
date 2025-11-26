@@ -110,21 +110,70 @@ const BlogPost = () => {
                       style={vscDarkPlus}
                       language={match[1]}
                       PreTag="div"
+                      className="rounded-xl !bg-[#1e1e1e] !p-4 my-6 shadow-lg"
                     >
                       {String(children).replace(/\n$/, '')}
                     </SyntaxHighlighter>
                   ) : (
-                    <code {...props} className={className}>
+                    <code {...props} className={`${className} bg-muted px-1.5 py-0.5 rounded-md font-mono text-sm text-primary`}>
                       {children}
                     </code>
                   )
                 },
                 blockquote({ children }: any) {
                   return (
-                    <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-muted-foreground">
+                    <blockquote className="border-l-4 border-primary pl-6 italic my-8 text-muted-foreground text-lg bg-secondary/10 py-4 pr-4 rounded-r-xl">
                       {children}
                     </blockquote>
                   );
+                },
+                a({ href, children }: any) {
+                  return (
+                    <a
+                      href={href}
+                      className="text-primary underline decoration-primary/30 hover:decoration-primary transition-all font-medium"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {children}
+                    </a>
+                  );
+                },
+                h1({ children }: any) {
+                  return <h1 className="text-3xl md:text-4xl font-serif font-bold mt-12 mb-6 text-foreground">{children}</h1>;
+                },
+                h2({ children }: any) {
+                  return <h2 className="text-2xl md:text-3xl font-serif font-bold mt-10 mb-5 text-foreground">{children}</h2>;
+                },
+                h3({ children }: any) {
+                  return <h3 className="text-xl md:text-2xl font-serif font-bold mt-8 mb-4 text-foreground">{children}</h3>;
+                },
+                ul({ children }: any) {
+                  return <ul className="list-disc list-outside ml-6 space-y-2 my-6 text-muted-foreground">{children}</ul>;
+                },
+                ol({ children }: any) {
+                  return <ol className="list-decimal list-outside ml-6 space-y-2 my-6 text-muted-foreground">{children}</ol>;
+                },
+                li({ children }: any) {
+                  return <li className="pl-2">{children}</li>;
+                },
+                img({ src, alt }: any) {
+                  return (
+                    <figure className="my-10">
+                      <img
+                        src={src}
+                        alt={alt}
+                        className="rounded-xl shadow-lg w-full object-cover border border-border"
+                      />
+                      {alt && <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">{alt}</figcaption>}
+                    </figure>
+                  );
+                },
+                p({ children }: any) {
+                  return <p className="leading-relaxed text-muted-foreground mb-6">{children}</p>;
+                },
+                hr() {
+                  return <hr className="my-12 border-border" />;
                 }
               }}
             >
